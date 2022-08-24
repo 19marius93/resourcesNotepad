@@ -2,4 +2,10 @@
 
 https://19marius93.github.io/resourcesNotepad/
 
-This is a VueJS Project
+This is an app where you can store and manage your favorite learning resources, and it demonstrates my ability to build a more complex app, from scratch, using VueJS.
+
+ <strong>Create:</strong> To create this app I've used the "vue create" command in the terminal, and created my main App.vue file, which I then imported in the main.js file. In my main App.vue component, I've used a <script> tag so I can locally import some single use components (such as TheHeader.vue), I displayed them using a <template> tag, and I've also used a <style> tag, to globally import a font from Google Fonts.
+ 
+ <strong>Style:</strong> The UI styling of the page (such as: buttons, cards, error dialog), is made by creating components where I used <slot> tags to render the parent-provided slot content and  <style scoped> tags, where I provided CSS Properties like flex-box, pseudo-classes and  media queries to get the desired result. This components are imported globally in the main.js file.
+ 
+ <strong>Functionality:</strong> The functional part of the app was achieved by creating a dynamic component (TheResources.vue), to switch between our Stored Resources and Add Resources components, which are stored locally in the dynamic component.  I've used the "methods:" property, where I defined functions, to get the necessary functionality in order to add the resources, and I've used Provide/ Inject to share data between these parent-child components. The data shared is then stored  in the "data()" property of our dynamic component. To add resources in the AddResources.vue component, I've used custom and HTML (form, inputs) tags, where the user can input data in the <template>. The inputted data is then being trimmed through, using JS method ".trim()", to make sure data is actually inputted by the user, and if that's the case, it will then return the value of the inputted data, and submits it to its parent component (TheResources.vue). If data is missing from one or multiple inputs on submit, then, the if statement in the function, which contains the ".trim()" method, is met and it will throw an error dialog, warning the user that at least on input is empty. 
